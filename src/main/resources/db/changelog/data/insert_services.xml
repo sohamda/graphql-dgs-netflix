@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet author="soham" id="1">
+        <insert tableName="service">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Yearly-Checkup"/>
+            <column name="description" value="Yearly servicing of your car"/>
+            <column name="provider_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Roadside Help"/>
+            <column name="description" value="Help on accidents"/>
+            <column name="provider_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Scratch fix"/>
+            <column name="description" value="fix my dent"/>
+            <column name="provider_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="2">
+        <insert tableName="service">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Heating Service"/>
+            <column name="description" value="Heating service"/>
+            <column name="provider_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Window-Doors"/>
+            <column name="description" value="Anything for your windows and doors"/>
+            <column name="provider_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="6"/>
+            <column name="name" value="Electricity"/>
+            <column name="description" value="Anything for your electricity needs"/>
+            <column name="provider_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="3">
+        <insert tableName="service">
+            <column name="id" valueNumeric="7"/>
+            <column name="name" value="Tv-Series"/>
+            <column name="description" value="Experience the real world"/>
+            <column name="provider_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="8"/>
+            <column name="name" value="Green Bag"/>
+            <column name="description" value="Get the freshness"/>
+            <column name="provider_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="9"/>
+            <column name="name" value="Bonbon"/>
+            <column name="description" value="For the sweet tooth"/>
+            <column name="provider_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="4">
+        <insert tableName="service">
+            <column name="id" valueNumeric="10"/>
+            <column name="name" value="3D Projector"/>
+            <column name="description" value="Get your projectors"/>
+            <column name="provider_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="11"/>
+            <column name="name" value="ChemicOl"/>
+            <column name="description" value="World of chemistry"/>
+            <column name="provider_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="service">
+            <column name="id" valueNumeric="12"/>
+            <column name="name" value="Virtualization"/>
+            <column name="description" value="Everything at your desk"/>
+            <column name="provider_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

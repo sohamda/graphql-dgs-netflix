@@ -1,0 +1,20 @@
+type Query {
+    services: [Service]
+    serviceById(id: ID): Service
+    providers: [Provider]
+    providerById(id: ID): Provider
+}
+
+type Provider {
+    id: ID
+    name: String
+    description: String
+    services: [Service]
+}
+
+type Service {
+    id: ID
+    name: String
+    description: String
+    provider: Provider
+}

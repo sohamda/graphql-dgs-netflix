@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <include file="/db/changelog/changes/create-providers-table-changelog.xml"/>
+    <include file="/db/changelog/changes/create-services-table-changelog.xml"/>
+    <include file="/db/changelog/changes/create-citizens-table-changelog.xml"/>
+    <include file="/db/changelog/changes/create-citizen_services-table-changelog.xml"/>
+    <include file="/db/changelog/data/insert_providers.xml"/>
+    <include file="/db/changelog/data/insert_services.xml"/>
+    <include file="/db/changelog/data/insert_citizens.xml"/>
+    <include file="/db/changelog/data/insert_citizen_service.xml"/>
+</databaseChangeLog>

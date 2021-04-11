@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet author="soham" id="1">
+        <insert tableName="provider">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Auto Moto"/>
+            <column name="description" value="Everything for your car"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="2">
+        <insert tableName="provider">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Loco Poco"/>
+            <column name="description" value="Everything for your house"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="3">
+        <insert tableName="provider">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Su-Real"/>
+            <column name="description" value="Experience the difference"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="4">
+        <insert tableName="provider">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Ha-Ku-Na Mutoto"/>
+            <column name="description" value="The future is here"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

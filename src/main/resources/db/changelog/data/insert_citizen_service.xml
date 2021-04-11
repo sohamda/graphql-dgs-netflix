@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet author="soham" id="1">
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="1"/>
+            <column name="citizen_id" valueNumeric="1"/>
+            <column name="service_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="2"/>
+            <column name="citizen_id" valueNumeric="1"/>
+            <column name="service_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="3"/>
+            <column name="citizen_id" valueNumeric="1"/>
+            <column name="service_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="4"/>
+            <column name="citizen_id" valueNumeric="1"/>
+            <column name="service_id" valueNumeric="12"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="2">
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="5"/>
+            <column name="citizen_id" valueNumeric="2"/>
+            <column name="service_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="6"/>
+            <column name="citizen_id" valueNumeric="2"/>
+            <column name="service_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="7"/>
+            <column name="citizen_id" valueNumeric="2"/>
+            <column name="service_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="8"/>
+            <column name="citizen_id" valueNumeric="2"/>
+            <column name="service_id" valueNumeric="10"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="3">
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="9"/>
+            <column name="citizen_id" valueNumeric="3"/>
+            <column name="service_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="10"/>
+            <column name="citizen_id" valueNumeric="3"/>
+            <column name="service_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="11"/>
+            <column name="citizen_id" valueNumeric="3"/>
+            <column name="service_id" valueNumeric="9"/>
+        </insert>
+    </changeSet>
+    <changeSet author="soham" id="4">
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="12"/>
+            <column name="citizen_id" valueNumeric="4"/>
+            <column name="service_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="13"/>
+            <column name="citizen_id" valueNumeric="4"/>
+            <column name="service_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="citizen_service">
+            <column name="id" valueNumeric="14"/>
+            <column name="citizen_id" valueNumeric="4"/>
+            <column name="service_id" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
