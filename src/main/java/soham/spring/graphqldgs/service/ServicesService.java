@@ -29,6 +29,6 @@ public class ServicesService {
     }
 
     public List<Service>  findProviderOfService(Provider provider) {
-        return serviceRepository.findAllByProvider(provider);
+        return serviceRepository.findByProviderId(provider.getId());
     }
 }

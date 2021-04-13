@@ -27,4 +27,8 @@ public class ProviderService {
         }
         return provider.get();
     }
+
+    public List<Provider> findAllProvidersByIds(List<Integer> ids) {
+        return providerRepository.findByIdIn(ids);
+    }
 }

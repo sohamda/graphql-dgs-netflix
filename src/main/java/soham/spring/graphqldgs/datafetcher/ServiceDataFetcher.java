@@ -4,12 +4,15 @@ import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
 import com.netflix.graphql.dgs.InputArgument;
+import org.dataloader.DataLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import soham.spring.graphqldgs.dataloader.ProviderDataLoader;
 import soham.spring.graphqldgs.entity.Provider;
 import soham.spring.graphqldgs.entity.Service;
 import soham.spring.graphqldgs.service.ServicesService;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @DgsComponent
 public class ServiceDataFetcher {
@@ -28,9 +31,11 @@ public class ServiceDataFetcher {
     }
 
     @DgsData(parentType = "Service", field = "provider")
-    public Provider provider(DgsDataFetchingEnvironment dfe) {
+    public CompletableFuture<Provider> provider(DgsDataFetchingEnvironment dfe) {
+        //DataLoader<Integer, Provider> dataLoader = dfe.getDataLoader("providers");
+        DataLoader<Integer, Provider> dataLoader = dfe.getDataLoader(ProviderDataLoader.class);
         Service service = dfe.getSource();
-        return service.getProvider();
+        return dataLoader.load(service.getProviderId());
     }
 
 }
