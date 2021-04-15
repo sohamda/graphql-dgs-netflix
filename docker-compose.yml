@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  graphql-dgs:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8085:8085"
+    deploy:
+      resources:
+        limits:
+          memory: 320M
+        reservations:
+          memory: 128M
