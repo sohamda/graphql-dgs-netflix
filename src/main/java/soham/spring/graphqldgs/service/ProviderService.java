@@ -31,4 +31,10 @@ public class ProviderService {
     public List<Provider> findAllProvidersByIds(List<Integer> ids) {
         return providerRepository.findByIdIn(ids);
     }
+
+    public Provider addProvider(String name, String description) {
+        Integer maxId = providerRepository.maxId();
+
+        return providerRepository.save(Provider.builder().id(maxId+1).name(name).description(description).build());
+    }
 }

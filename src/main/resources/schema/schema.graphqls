@@ -1,8 +1,18 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
 type Query {
     services: [Service]
     serviceById(id: ID): Service
     providers: [Provider]
     providerById(id: ID): Provider
+}
+
+type Mutation {
+    addService(name: String!, description: String, providerId: ID!): Service
+    addProvider(name: String!, description: String): Provider
 }
 
 type Provider {

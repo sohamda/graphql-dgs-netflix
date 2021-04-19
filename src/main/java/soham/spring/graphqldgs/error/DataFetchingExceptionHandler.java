@@ -16,7 +16,8 @@ public class DataFetchingExceptionHandler implements DataFetcherExceptionHandler
     private final DefaultDataFetcherExceptionHandler defaultHandler = new DefaultDataFetcherExceptionHandler();
 
     @Override
-    public DataFetcherExceptionHandlerResult onException(DataFetcherExceptionHandlerParameters dataFetcherExceptionHandlerParameters) {
+    public DataFetcherExceptionHandlerResult onException(DataFetcherExceptionHandlerParameters
+                                                                     dataFetcherExceptionHandlerParameters) {
         if(dataFetcherExceptionHandlerParameters.getException() instanceof NoDataFoundError) {
 
             NoDataFoundError noDataFoundError = (NoDataFoundError)dataFetcherExceptionHandlerParameters.getException();

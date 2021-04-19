@@ -4,6 +4,7 @@ import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
 import com.netflix.graphql.dgs.InputArgument;
+import graphql.schema.DataFetchingEnvironment;
 import org.dataloader.DataLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import soham.spring.graphqldgs.dataloader.ProviderDataLoader;
@@ -36,6 +37,15 @@ public class ServiceDataFetcher {
         DataLoader<Integer, Provider> dataLoader = dfe.getDataLoader(ProviderDataLoader.class);
         Service service = dfe.getSource();
         return dataLoader.load(service.getProviderId());
+    }
+
+    @DgsData(parentType = "Mutation", field = "addService")
+    public Service addService(DataFetchingEnvironment dataFetchingEnvironment) {
+        String name = dataFetchingEnvironment.getArgument("name");
+        String description = dataFetchingEnvironment.getArgument("description");
+        String providerId = dataFetchingEnvironment.getArgument("providerId");
+
+        return service.addService(name, description, providerId);
     }
 
 }

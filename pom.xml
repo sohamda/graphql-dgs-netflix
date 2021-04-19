@@ -45,7 +45,6 @@
 		<dependency>
 			<groupId>com.netflix.graphql.dgs</groupId>
 			<artifactId>graphql-dgs-spring-boot-starter</artifactId>
-			<!-- Make sure to set the latest framework version! -->
 			<version>${dgs.framework.version}</version>
 		</dependency>
 

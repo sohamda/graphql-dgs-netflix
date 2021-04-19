@@ -31,4 +31,12 @@ public class ServicesService {
     public List<Service>  findProviderOfService(Provider provider) {
         return serviceRepository.findByProviderId(provider.getId());
     }
+
+    public Service addService(String name, String description, String providerId) {
+        Integer maxId = serviceRepository.maxId();
+
+        return serviceRepository.save(Service.builder().id(maxId+1)
+                .name(name).description(description).providerId(Integer.parseInt(providerId))
+                .build());
+    }
 }
