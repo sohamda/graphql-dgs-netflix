@@ -14,6 +14,6 @@ This application uses H2 as in-memory database to showcase, but you can also use
 ## To run this :
 `` mvn clean install ``
 
-`` mvn sprint-boot:run``
+`` mvn spring-boot:run``
 
 `` docker-compose up --build -d``
