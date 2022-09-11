@@ -23,7 +23,7 @@ public class ServicesService {
         Optional<Service> service = serviceRepository.findById(Integer.parseInt(serviceId));
 
         if(service.isEmpty()) {
-            throw new NoDataFoundError("No Provider found", "SER-001");
+            throw new NoDataFoundError("No Service found", "SER-001");
         }
         return service.get();
     }

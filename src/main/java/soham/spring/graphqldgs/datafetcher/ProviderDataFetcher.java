@@ -2,7 +2,6 @@ package soham.spring.graphqldgs.datafetcher;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
-import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
 import com.netflix.graphql.dgs.InputArgument;
 import graphql.schema.DataFetchingEnvironment;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class ProviderDataFetcher {
     }
 
     @DgsData(parentType = "Provider", field = "services")
-    public List<Service> services(DgsDataFetchingEnvironment dfe) {
+    public List<Service> services(DataFetchingEnvironment dfe) {
         Provider provider = dfe.getSource();
         return service.findProviderOfService(provider);
     }

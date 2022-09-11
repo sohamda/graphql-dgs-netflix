@@ -69,6 +69,26 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.7.3</version>
+				<configuration>
+					<verbose>true</verbose>
+					<coverageThreshold>70</coverageThreshold>
+					<mutationThreshold>70</mutationThreshold>
+					<threads>6</threads>
+					<timeoutFactor>0.7</timeoutFactor>
+					<maxDependencyDistance>1</maxDependencyDistance>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.pitest</groupId>
+						<artifactId>pitest-junit5-plugin</artifactId>
+						<version>0.15</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 	</build>
 
