@@ -62,7 +62,7 @@ public class ProviderDataFetcherTests {
     }
 
     @Test
-    void testRetrieveServices() {
+    void testRetrieveProviders() {
         List<String> serviceNames = dgsQueryExecutor.executeAndExtractJsonPath(
                 " { providers { name services { name } }}",
                 "data.providers[0].services[*].name");
