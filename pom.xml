@@ -15,7 +15,7 @@
 	<description>Spring Boot project to demonstrate GraphQL with graphql-dgs from Netflix</description>
 	<properties>
 		<java.version>17</java.version>
-		<dgs.framework.version>5.0.5</dgs.framework.version>
+		<dgs.framework.version>5.4.1</dgs.framework.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -45,8 +45,14 @@
 		<dependency>
 			<groupId>com.netflix.graphql.dgs</groupId>
 			<artifactId>graphql-dgs-spring-boot-starter</artifactId>
-			<version>${dgs.framework.version}</version>
 		</dependency>
+		<!-- Workaround for https://github.com/Netflix/dgs-framework/issues/1281# -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java</artifactId>
+			<version>19.2</version>
+		</dependency>
+		<!-- Workaround end -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,7 +60,17 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.netflix.graphql.dgs</groupId>
+				<artifactId>graphql-dgs-platform-dependencies</artifactId>
+				<version>${dgs.framework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
