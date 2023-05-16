@@ -34,3 +34,8 @@ jobs:
           app-name: graphql-dgs-netflix
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
+          jvm-options: -Xms512m -Xmx1024m
+          deployment-name: graphql-dgs-netflix
+          create-new-deployment: false
+          version: 0.0.1
+          runtime-version: Java_17
