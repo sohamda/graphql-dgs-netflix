@@ -1,0 +1,36 @@
+name: GraphQL-DGS
+on: push
+env:
+  ASC_PACKAGE_PATH: ${{ github.workspace }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@main
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: maven build, clean
+        run: |
+          mvn clean package -DskipTests
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy to production with artifact
+        uses: azure/spring-cloud-deploy@v1
+        with:
+          azure-subscription: ${{ secrets.SUBSCRIPTION_ID }}
+          action: Deploy
+          service-name: graphql-dgs-asa
+          app-name: graphql-dgs-netflix
+          use-staging-deployment: false
+          package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
