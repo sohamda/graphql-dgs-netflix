@@ -36,3 +36,4 @@ jobs:
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
           jvm-options: -Xms512m -Xmx1024m
           runtime-version: Java_17
+          createNewDeployment: true
