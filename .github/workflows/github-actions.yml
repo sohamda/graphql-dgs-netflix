@@ -29,8 +29,10 @@ jobs:
         uses: azure/spring-cloud-deploy@v1
         with:
           azure-subscription: ${{ secrets.SUBSCRIPTION_ID }}
-          action: Deploy
+          action: deploy
           service-name: ${{ secrets.SERVICE_NAME }}
           app-name: graphql-dgs-netflix
-          use-staging-deployment: false
+          use-staging-deployment: true
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
+          jvm-options: -Xms512m -Xmx1024m
+          runtime-version: Java_17
