@@ -13,7 +13,7 @@ jobs:
       - name: Set up Java 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
+          distribution: 'microsoft'
           java-version: '17'
 
       - name: maven build, clean
@@ -30,7 +30,7 @@ jobs:
         with:
           azure-subscription: ${{ secrets.SUBSCRIPTION_ID }}
           action: Deploy
-          service-name: grapql-dgs-asa
+          service-name: ${{ secrets.SERVICE_NAME }}
           app-name: graphql-dgs-netflix
-          use-staging-deployment: true
+          use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
