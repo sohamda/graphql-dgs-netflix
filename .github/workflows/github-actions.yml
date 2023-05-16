@@ -32,10 +32,5 @@ jobs:
           action: Deploy
           service-name: grapql-dgs-asa
           app-name: graphql-dgs-netflix
-          use-staging-deployment: false
+          use-staging-deployment: true
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
-          jvm-options: -Xms512m -Xmx1024m
-          deployment-name: default
-          create-new-deployment: false
-          version: 0.0.1
-          runtime-version: Java_17
