@@ -25,6 +25,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - run: |
+          az spring app create --name graphql-dgs-netflix --instance-count 1 --assign-endpoint true --memory 2Gi --runtime-version Java_17 --jvm-options='-Xms2048m -Xmx2048m'
+
       - name: deploy to production with artifact
         uses: azure/spring-cloud-deploy@v1
         with:
@@ -34,6 +37,4 @@ jobs:
           app-name: graphql-dgs-netflix
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/target/*.jar
-          jvm-options: -Xms512m -Xmx1024m
           runtime-version: Java_17
-          create-new-deployment: true
