@@ -25,10 +25,10 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - run: |
-          az config set extension.use_dynamic_install=yes_without_prompt
-      - run: |
-          az spring app create --resource-group graphql-dgs-rg --service graphql-dgs-asa --name graphql-dgs-netflix --instance-count 1 --assign-endpoint true --memory 2Gi --runtime-version Java_17 --jvm-options='-Xms2048m -Xmx2048m'
+#      - run: |
+#          az config set extension.use_dynamic_install=yes_without_prompt
+#      - run: |
+#          az spring app create --resource-group graphql-dgs-rsg --service graphql-dgs-asa --name graphql-dgs-netflix --instance-count 1 --assign-endpoint true --memory 2Gi --runtime-version Java_17 --jvm-options='-Xms2048m -Xmx2048m'
 
       - name: deploy to production with artifact
         uses: azure/spring-cloud-deploy@v1
